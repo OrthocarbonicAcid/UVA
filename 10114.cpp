@@ -32,7 +32,7 @@ int main() {
 		}
 
 		cout << now << " month";
-		if (now > 1) cout << "s";
+		if (now != 1) cout << "s";
 		cout << endl;
 	}
 
