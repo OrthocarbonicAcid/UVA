@@ -1,4 +1,4 @@
-//11906 - Knight in a War Grid
+//UVA 11906 - Knight in a War Grid
 //やった！
 
 #include <bits/stdc++.h>
