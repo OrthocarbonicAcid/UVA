@@ -5,31 +5,22 @@
 
 using namespace std;
 
+const int N = 1e6 + 2;
+
 int main(){
     ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-    int n, m; 
-    
+    int n, m;
     while(cin >> n >> m){
-        vector<int>v[100001];
-        vector<int>a(n);
-        map<int, int>compress;
-
-        int cur = 1;
-        for(int i = 0; i < n; i++){
-            cin >> a[i];
-            if(!compress.count(a[i])){
-                compress[a[i]] = cur++;
-            }
-            v[compress[a[i]]].push_back(i + 1);
+        vector<int>a[N];
+        for(int i = 1; i <= n; i++){
+            int x; cin >> x;
+            a[x].push_back(i);
         }
 
         while(m--){
-            int k, x; cin >> k >> x;
-            if(v[compress[x]].size() < k){
-                cout << 0 << "\n";
-            } else{
-                cout << v[compress[x]][k - 1] << "\n";
-            }
+            int k, v; cin >> k >> v;
+            if(k > a[v].size()) cout << 0 << '\n';
+            else cout << a[v][k - 1] << '\n';
         }
     }
 
